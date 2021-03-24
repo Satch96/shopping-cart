@@ -3,7 +3,7 @@ import { Nav } from "./components/Nav"
 import { Home } from "./components/Home"
 import { Cart } from "./components/Cart"
 import { ItemDetail } from "./components/ItemDetail"
-import { HashRouter, Switch, Route,} from "react-router-dom"
+import { HashRouter, Switch, Route} from "react-router-dom"
 import "./App.css"
 import { useState, useEffect } from "react"
 
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div>
-      <HashRouter basename="/">
+      <HashRouter basename="/whywontyouwork">
         <Nav />
         <Switch>
           <Route path="/" exact component={Home}/>
