@@ -3,7 +3,7 @@ import { Nav } from "./components/Nav"
 import { Home } from "./components/Home"
 import { Cart } from "./components/Cart"
 import { ItemDetail } from "./components/ItemDetail"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as  Switch, Route, HashRouter } from "react-router-dom"
 import "./App.css"
 import { useState, useEffect } from "react"
 
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      <HashRouter basename="/">
         <Nav />
         <Switch>
           <Route path="/" exact component={Home}/>
@@ -70,7 +70,7 @@ function App() {
           render={(props) => <ItemDetail {...props} both = {both} addToCart={addToCart} changeTotal={changeTotal}/>}
           />
          </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
