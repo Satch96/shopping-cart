@@ -4,13 +4,13 @@ function Nav(){
     return(
         <nav>
             <ul>
-                <Link className="navstyle" to="/">
+                <Link className="navstyle" to={process.env.PUBLIC_URL + "/"}>
                     <li>Home</li>
                 </Link>
-                <Link className="navstyle" to="/shop">
+                <Link className="navstyle" to={process.env.PUBLIC_URL + "/shop"}>
                     <li>Shop</li>
                 </Link>
-                <Link className="navstyle" to="/cart">
+                <Link className="navstyle" to={process.env.PUBLIC_URL + "/cart"}>
                     <li>Cart</li>
                 </Link>
             </ul>

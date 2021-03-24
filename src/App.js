@@ -3,7 +3,7 @@ import { Nav } from "./components/Nav"
 import { Home } from "./components/Home"
 import { Cart } from "./components/Cart"
 import { ItemDetail } from "./components/ItemDetail"
-import { HashRouter, Switch, Route} from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import "./App.css"
 import { useState, useEffect } from "react"
 
@@ -54,23 +54,23 @@ function App() {
 
   return (
     <div>
-      <HashRouter basename="/whywontyouwork">
+      <Router>
         <Nav />
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/shop" exact>
+          <Route path={process.env.PUBLIC_URL + "/"} exact component={Home}/>
+          <Route path={process.env.PUBLIC_URL + "/shop"} exact>
             <Shop both = {both} />
           </Route>
           <Route 
-          path="/cart" 
+          path={process.env.PUBLIC_URL + "/cart"}
           render={(props)=> <Cart {...props} cart={cart} total={total} changeCart = {changeCart} changeTotal={changeTotal}/>}
           />
           <Route 
-          path="/shop/:id" 
+          path={process.env.PUBLIC_URL + "/shop/:id"} 
           render={(props) => <ItemDetail {...props} both = {both} addToCart={addToCart} changeTotal={changeTotal}/>}
           />
          </Switch>
-      </HashRouter>
+      </Router>
     </div>
   );
 }

@@ -40,7 +40,7 @@ function ItemDetail({match, both, addToCart}){
                 {both[id].name + " Added to Cart!"}
                 </div>
                 <div className="modal-stuff stuff-button">
-                <Link to="/cart">
+                <Link to={process.env.PUBLIC_URL + "/cart"}>
                 <button>Go to Cart</button>
                 </Link>
                 </div>

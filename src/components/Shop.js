@@ -7,7 +7,7 @@ function Shop({both}){
             {both.map((x,i)=>{
                 if (i%3===0){
                     return (
-                        <Link to={`/shop/${x.id}`}key={x.id}>
+                        <Link to={process.env.PUBLIC_URL + `/shop/${x.id}`}key={x.id}>
                             <div className="items newline" >
                                 <div>{x.name}</div>
                                 <div>{"£ " + x.price}</div>
@@ -17,7 +17,7 @@ function Shop({both}){
                 }
                 else{
                     return (
-                        <Link to={`/shop/${x.id}`} key={x.id} name={x.name}>
+                        <Link to={process.env.PUBLIC_URL + `/shop/${x.id}`} key={x.id} name={x.name}>
                         <div className="items">
                             <div>{x.name}</div>
                             <div>{"£ " + x.price}</div>
